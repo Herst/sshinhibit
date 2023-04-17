@@ -29,7 +29,7 @@ def main():
             if inhibit == proc.cmdline():
                 return
 
-        print "Starting inhibitor"
+        print("Starting inhibitor")
         with daemon.DaemonContext():
             subprocess.call(inhibit)
     elif args.mode == 'logout':
@@ -40,7 +40,7 @@ def main():
                 if terms > 1:
                     return
 
-        print "Stopping inhibitor"
+        print("Stopping inhibitor")
         subprocess.call(['pkill', '-f', ' '.join(inhibit)])
 
 if __name__ == '__main__':
